@@ -9,7 +9,7 @@
 
 ## :rocket: Sobre o desafio
 
-Crie uma aplicação que fará o cadastro dos pedidos de uma hamburgueria, e você deve utilizar [Node](https://nodejs.org/en/) e [Express](https://expressjs.com/pt-br/).
+Desafio para consolidar conhecimentos obtidos nas aulas do modulo BACK-END do curso FullStack ministrado pelo Rodolfo Mori: Criar uma aplicação que fará o cadastro dos pedidos de uma hamburgueria, deve utilizar [Node](https://nodejs.org/en/) e [Express](https://expressjs.com/pt-br/).
 
 ### Rotas
 
