@@ -1,5 +1,6 @@
 const express = require("express");
 const uuid = require("uuid");
+const cors = require("cors");
 
 const bodyParser = require("body-parser");
 
@@ -7,6 +8,7 @@ const port = 3005;
 const app = express();
 app.use(bodyParser.json());
 app.use(express.json());
+app.use(cors());
 
 const orders = [];
 
@@ -37,8 +39,8 @@ app.get("/orders", reqdMethUrl, (request, response) => {
 });
 
 app.post("/orders", reqdMethUrl, (request, response) => {
-  const { order, clientName, price, status } = request.body;
-  const users = { id: uuid.v4(), order, clientName, price, status };
+  const { order, name, price, status } = request.body;
+  const users = { id: uuid.v4(), order, name, price, status };
 
   orders.push(users);
 
@@ -46,11 +48,11 @@ app.post("/orders", reqdMethUrl, (request, response) => {
 });
 
 app.put("/orders/:id", checkOrderId, reqdMethUrl, (request, response) => {
-  const { order, clientName, price, status } = request.body;
+  const { order, name, price, status } = request.body;
   const index = request.orderIndex;
   const id = request.orderId;
 
-  const updateOrder = { id, order, clientName, price, status };
+  const updateOrder = { id, order, name, price, status };
 
   orders[index] = updateOrder;
 
